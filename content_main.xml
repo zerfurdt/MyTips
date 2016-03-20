@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp">
+    </com.google.android.gms.ads.AdView>
+
+    <EditText
+        android:id="@+id/edit_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/bill"
+        android:layout_marginTop="105dp"
+        android:layout_below="@+id/adView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/text_tip"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Amount"
+        android:layout_alignTop="@+id/edit_tip"
+        android:layout_toEndOf="@+id/tip_pp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Spinner
+        android:id="@+id/edit_tip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edit_bill"
+        android:layout_toEndOf="@+id/text_people"
+        android:layout_toRightOf="@+id/text_people" />
+    <TextView
+        android:id="@+id/text_people"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/people"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/edit_tip"
+        android:layout_toRightOf="@+id/tip_pp"
+        android:layout_toEndOf="@+id/tip_pp" />
+    <NumberPicker
+        android:id="@+id/edit_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_tip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/tip_pp"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tip"
+        android:layout_below="@+id/text_people"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tip_pp"
+        android:layout_alignParentLeft="true"
+        android:text="@string/per_person"
+        android:id="@+id/textView2" />
+    <TextView
+        android:id="@+id/result_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:layout_alignBaseline="@+id/tip_pp"
+        android:layout_alignBottom="@+id/tip_pp"
+        android:layout_toRightOf="@+id/tip_pp"
+        android:layout_toEndOf="@+id/tip_pp" />
+    <TextView
+        android:id="@+id/result_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:layout_above="@+id/textView"
+        android:layout_toRightOf="@+id/text_total"
+        android:layout_toEndOf="@+id/text_total" />
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/per_person"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/text_total"
+        android:layout_alignStart="@+id/text_total" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="calculate"
+        android:text="@string/calculate"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/adView"
+        android:layout_alignEnd="@+id/adView"
+        android:id="@+id/button" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/erftechlogo"
+        android:contentDescription="logo"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/text_people"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
